@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="scala_bbva_it" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.itformacion.scalacurso.App" />
+    <module name="scala_bbva_it" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
