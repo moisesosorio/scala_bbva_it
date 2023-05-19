@@ -1,7 +1,8 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="scala_bbva_it" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="com.itformacion.scalacurso.App" />
+    <option name="MAIN_CLASS_NAME" value="com.itformacion.scalacurso.ExecutionJob" />
     <module name="scala_bbva_it" />
+    <option name="PROGRAM_PARAMETERS" value="C:\PersonalProjects\cursos\scala_bbva_it\src\main\resources\reference.conf" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>
