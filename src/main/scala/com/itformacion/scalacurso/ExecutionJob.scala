@@ -3,7 +3,7 @@ package com.itformacion.scalacurso
 /**
  * @author ${user.name}
  */
-object App {
+object ExecutionJob {
   
   def foo(x : Array[String]) = x.foldLeft("")((a,b) => a + b)
   
