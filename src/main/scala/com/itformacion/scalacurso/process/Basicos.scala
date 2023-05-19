@@ -76,6 +76,9 @@ object Basicos {
   }
 
   def TiposDeUsoComun(): Unit = {
+    /***
+     * Cualos son los tipos de datos de uso comun
+     */
 
 
   }
