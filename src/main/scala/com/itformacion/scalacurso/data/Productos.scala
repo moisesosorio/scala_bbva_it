@@ -1,7 +1,7 @@
 package com.itformacion.scalacurso.data
 
 
-class Productos(nombreVar: String, precioVar: Int, stockVar: Int, vencimientoVar: String){
+class Productos(nombreVar: String, precioVar: Int, stockVar: Int, vencimientoVar: String) {
   val nombre: String = nombreVar
   val precio: Int = precioVar
   val stock: Int = stockVar

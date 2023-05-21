@@ -1,13 +1,13 @@
 package com.itformacion.scalacurso
 
+import com.itformacion.scalacurso.process.{Basicos => ba, EstucturasFuncionesDeControl => ef}
 import com.typesafe.config.ConfigFactory
-import com.itformacion.scalacurso.process.{Basicos => ba}
 
 /**
  * @author moises osorio
  */
 private object ExecutionJob {
-  def main(args : Array[String]) {
+  def main(args: Array[String]) {
     val reference = args(0)
     val globalConfig = ConfigFactory.load(reference)
     val configIn = globalConfig.getConfig("ScalaCurso")
@@ -18,7 +18,14 @@ private object ExecutionJob {
       case "3" => ba.TiposDeUsoComun()
       case "4" => ba.SobrecaraAritmeticaOperadores()
       case "5" => ba.FuncionesMetodosDeLlamadas()
-      case "6" => ba.MetodoDeAplicacion()
+      case "6" => ef.ExpresionesCondicionales()
+      //case "7" => ef.BloquearExpresionesAsignaciones()
+      case "8" => ef.Bucles()
+      case "9" => ef.ArgumentosPredeterminadosNombre()
+      case "10" => ef.ArgumentosVariables()
+      case "11" => ef.Procedimientos()
+      case "12" => ef.LazyValues()
+      case "13" => ef.Excepciones()
     }
   }
 }
