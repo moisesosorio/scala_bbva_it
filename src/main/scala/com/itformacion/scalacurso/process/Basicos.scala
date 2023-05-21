@@ -8,8 +8,7 @@ object Basicos {
   def InterpreteDeScala(): Unit = {
     /***
      * Que es el interprete de Scala?
-     *
-     * Que hace o cual es su trabajo?
+     * Es el encargado de interpretar nuestras lineas de codigo escritas y ejecutar sobre la VM de java
      *
      */
 
@@ -28,11 +27,11 @@ object Basicos {
     println(arrayTotal.mkString(","))
 
     /**
-     * Ejercicio: Solicitar al interprete que identifique el area de un triangulo con los siguientes datos:
+     * EJERCICIO:
+     * Solicitar al interprete que identifique el area de un triangulo con los siguientes datos:
      * Base = 20
      * Altura = 30
      */
-
   }
 
   def DeclarandoValoresVariables(): Unit = {
@@ -58,9 +57,11 @@ object Basicos {
     println(valorAsignandoTipo.getClass)
 
     //Variable
+    //NOTESE: Que el IDE nos recomienda utilizar val al no reasignar el valor de la variable dentro del objeto
     var variableInfiriendoTipo = (20 * 10) - 10 / 2
 
     //Asignando el tipo
+    //NOTESE: Que el IDE se reaisgna el valor por ende se comprueba que la variable es valida.
     var variableAsignandoTipo: Float = (20 * 13) / 3
 
     variableAsignandoTipo = 30 * 20
@@ -69,12 +70,12 @@ object Basicos {
     println(variableAsignandoTipo)
 
     /**
-     * Ejercicio: Sumar el resultado de la variable variableAsignandoTipo mas el resultado del valor valorInfiriendoTipo
+     * EJERCICIO:
+     * Sumar el resultado de la variable variableAsignandoTipo mas el resultado del valor valorInfiriendoTipo
      * y al resultado dividirlo entre 2
      *
      * Imprimir el resultado
      */
-
   }
 
   def TiposDeUsoComun(): Unit = {
@@ -254,6 +255,103 @@ object Basicos {
 
   def FuncionesMetodosDeLlamadas(): Unit = {
 
+    /***
+     * Funcion: Sin parametros
+     * Funcion basica donde ejecutamos reglas de negocio dentro de un funcion que no recibe parametros ni devuelve valores
+     */
+    def funcion_sin_parametros(): Unit = println("¡Hola, mundo!")
+    funcion_sin_parametros()
+
+    /***
+     * Funcion: Con parametros
+     * Aqui vemos una funcion comun donde enviamos parametros y retornamos un tipo de dato Int con el valor resultante
+     * de la suma entre ambos parametros de entrada
+     */
+    def suma(x: Int = 2, y: Int = 3): Int = x + y
+    val resultado = suma(2, 3)
+    println(resultado)
+
+    /**
+     * Funcion: con numero de parametros variable
+     * Aqui enviamos una serie de argumentos como parametros, los cuales nos ayudan a procesar. No devolvemos nada.
+     */
+    def funcion_con_varios_argumentos(args: String*): Unit = {
+      var i: Int = 0;
+      for (arg <- args) {
+        i = i + 1;
+      }
+    }
+    funcion_con_varios_argumentos("primero","segundo")
+
+    /**
+     * Funcion: Anonima
+     * Llamamos anonima porque no le damos nombre, como en los casos anteriores. Solo creamos la logica y el resultado lo guardamos
+     * dentro de una variable. Ademas, podemos enviar parametros para su procesamiento.
+     *
+     * estos caracteres "=>" son conocidos como transformador
+     * El transformador se usa para transformar la lista de parámetros del lado izquierdo del símbolo
+     * en un nuevo resultado usando la expresión presente en el lado derecho.
+     *
+     * estos caracteres "_" son conocidos como comodin
+     * Es una forma abreviada de representar un parámetro que aparece solo una vez en la función anónima
+     *
+     */
+      //Funcion anonima con parametros
+    val funcAnonima1 = (x: Int, y: Int) => x + y
+    println("funcAnonima1 : " + funcAnonima1(3, 2))
+
+    //Funcion anonima con wildcard. Tener en cuenta que los valores solo aparecen una vez
+    val funcAnonima2 = (_:Int) * (_:Int)
+    println("funcAnonima2 : " + funcAnonima2(4, 5))
+
+    //Funcion anonima sin parametros
+    val funcAnonima3 = () => { val x = 10; val y = 2; x*y }
+    println("funcAnonima3 : " + funcAnonima3())
+
+    /**
+     * Funciones llamada por valor
+     * En estas funciones los cambios realizados en el parametro no se envian de vuelta a quien llama a la funcion
+     * sintaxis: def llamadaPorValor(x: Int)
+     */
+    def llamadaPorValor(x: Int): Unit = {
+      println("valor1: " + x)
+      println("valor2: " + x)
+      println("valor3: " + x)
+    }
+
+    var Valor = 0
+    llamadaPorValor{
+      Valor +=1; Valor
+    }
+
+    /**
+     * Funciones llamada por nombre
+     * En estas funciones los cambios realizados en el parametro se envian de vuelta a quien llama a la funcion
+     * sintaxis: def llamadaPorNombre(x: => Int)
+     */
+    def llamadaPorNombre(x: => Int): Unit = {
+      println("Nombre1: " + x)
+      println("Nombre2: " + x)
+      println("Nombre3: " + x)
+    }
+
+    var Nombre = 0
+    llamadaPorNombre {
+      Nombre += 1;
+      Nombre
+    }
+
+    /**
+     * EJERCICIO:
+     * Crear una funcion principal que reciba 2 parametros (edad y anio) y que contenga:
+     * 1. funcion anonima para definir verdadero cuando la edad es menor al anio
+     * 2. funcion de llamada por nombre donde se reste la el anio menos la edad y retorne el anio de nacimiento
+     *
+     * println(identificarAnioNacimiento(37, 2023))
+     * resultado: 1986
+     *
+     * Imprimir el resultado
+     */
   }
 
   def MetodoDeAplicacion(): Unit = {
