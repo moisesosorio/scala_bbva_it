@@ -19,13 +19,11 @@ private object ExecutionJob {
       case "4" => ba.SobrecaraAritmeticaOperadores()
       case "5" => ba.FuncionesMetodosDeLlamadas()
       case "6" => ef.ExpresionesCondicionales()
-      //case "7" => ef.BloquearExpresionesAsignaciones()
-      case "8" => ef.Bucles()
-      case "9" => ef.ArgumentosPredeterminadosNombre()
-      case "10" => ef.ArgumentosVariables()
-      case "11" => ef.Procedimientos()
-      case "12" => ef.LazyValues()
-      case "13" => ef.Excepciones()
+      case "7" => ef.Bucles()
+      case "8" => ef.AvanzadoParaBuclesYComprensiones()
+      case "9" => ef.Procedimientos()
+      case "10" => ef.LazyValues()
+      case "11" => ef.Excepciones()
     }
   }
 }

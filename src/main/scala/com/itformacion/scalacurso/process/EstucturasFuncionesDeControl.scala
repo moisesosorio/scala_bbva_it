@@ -209,25 +209,183 @@ object EstucturasFuncionesDeControl {
 
   }
 
-  def ArgumentosPredeterminadosNombre(): Unit = {
+  def AvanzadoParaBuclesYComprensiones(): Unit = {
+    /** *
+     * For-comprenhension para avanzados bucles
+     * El siguiente for-comprenhension retorna un valor que se guarda en la variable listaResultante y luego es recorrido
+     * por un foreach
+     */
 
-  }
+    //Creamos una case class para definir el objeto usuario, solo tiene nombre y edad
+    case class Usuario(nombre: String, edad: Int)
 
-  def ArgumentosVariables(): Unit = {
+    //Creamos la lista usuarioBase con los datos de los usuarios
+    val usuarioBase = List(
+      Usuario("Travis", 28),
+      Usuario("Kelly", 33),
+      Usuario("Jennifer", 44),
+      Usuario("Dennis", 23))
 
+    //Creamos el valor listaResultante donde guardaremos la evaluacion dentro del for (guards)
+    val listaResultante =
+      for (user <- usuarioBase if user.edad >= 20 && user.edad < 30)
+        yield user.nombre
+
+    listaResultante.foreach(println)
+
+    /**
+     * El siguiente for-comprenhension no retorna ningun valor, sino que tiene por retorno un Unit y las logica
+     * esta dentro del for y tambien tiene guards para el operador j
+     */
+
+    def verificar(x: Int) =
+      for (i <- 0 until 5;
+           j <- 0 until 5 if i * j >= x) {
+        val multiplo = i * 2
+        val divisor = j / 2
+
+        println(s"($i, $j)")
+        println(s"multiplo $multiplo y divisor: $divisor")
+      }
+
+    verificar(5)
+
+    /**
+     * EJERCICIO:
+     * Tomar una foto al resultado y al codigo y subir en un archivo con nombre EJERCICIO_AvanzadoParaBuclesYComprensiones y
+     * subir a su carpeta de trabajo
+     *
+     * Crear un sequencial (seq) que contenga la case class deportes con dos atributos nombre(String) y seguidores(int)
+     * Que el sequencial tenga al menos 6 componentes
+     *
+     * Ejecutar un for comprehension donde se pinte solo los deportes que tengan mas de 1000 seguidores
+     *
+     */
   }
 
   def Procedimientos(): Unit = {
-
+    /** *
+     * Un procedimiento es una funcion sin valor retornado, es decir una funcion que retorna Unit
+     *
+     * EJERCICIO:
+     * Tomar una foto al resultado y al codigo y subir en un archivo con nombre EJERCICIO_Procedimientos y
+     * subir a su carpeta de trabajo
+     *
+     * Crear un procedimiento que evalue cambie minusculas por mayusculas dentro de un arregle de Strings
+     *
+     */
   }
 
   def LazyValues(): Unit = {
+    /** *
+     * Por definicion los valores Lazy son ejecutados cuando se acceden a estos a diferencia de los valores normales
+     * que son ejecutados cuando se definen. Es decir, un valor lazy solo ocupa memoria cuando es ejecutado mas no cuando
+     * se definen.
+     *
+     * RIESGO: Es bueno utilizar lazy values en todo momento?. Debemos tener en cuenta que al no ejecutar el metodo u objeto de manera
+     * pronta se podria generar un encolamiento y por ende un error de timeout de acceso a la variable. Es conocido como deadbloack.
+     *
+     * Se recomienda usar lazyval para los valores que no seran usados mas que una vez en el programa y de esta manera no consumir
+     * recursos ni generar deadblock en el software
+     *
+     */
 
+    //Creamos un valor x con 15, el valor x al ser creado y ejecutado ya consume memoria
+    val x = 15
 
+    //Creamos un lazy valor y, el valor no consume memoria sino hasta que se accede a el por primera vez
+    lazy val y = {
+      println("Inicializando");
+      17
+    }
+
+    //Ejecutamos las valores
+    x
+    y
+
+    //En el siguiente ejemplo se esta tratando de visualizar una practica que podria generar errores y/o riesgos
+    //en el desarrollo del software. La llamada a lazy values en diferente metodos de manera cruzada, esto para
+    //simular una instancia de multiples hilos o ejecuciones en paralelo.
+    //No da error en la maquina local pero dentro de un proceso de ejecucion paralela en un servidor esta tecnica
+    //podria generar problemas y errores de deadblock
+    object Persona {
+      lazy val inicial = 30
+      lazy val edad = Humano.inicial //llamamos a un lazy val de otro objeto
+    }
+
+    object Humano {
+      lazy val inicial = Persona.inicial //llamamos a un lazy val de otro objeto
+    }
+
+    def ejecutar(): Unit = {
+      val resultado = List(Persona.edad, Humano.inicial)
+      println(resultado)
+    }
+
+    ejecutar()
   }
 
   def Excepciones(): Unit = {
+    /**
+     * El manejo de excepciones es muy importante en la programacion de todo tipo. Scala nos da la capacidad de manejar
+     * los errores de manera bastante customizable,
+     */
 
+    //Objeto de muestra para crear clases que extiendan RuntimeException
+    object CalculadorExceptions {
+      class ExcepcionDeEnteroSobrecargado extends RuntimeException
+
+      class ExcepcionDeNumerosNegativos extends RuntimeException
+    }
+
+    //Objeto con logica de negocio donde se coloca la logica temporal solo para demostracion del manejo de errores
+    object Calculador {
+
+      import CalculadorExceptions._
+
+      def suma(a: Int, b: Int): Int = {
+        //Artificio para caer en la excepcion de tipo valor negativo
+        if (a < 0) throw new ExcepcionDeNumerosNegativos
+
+        //Evaluacion
+        val result = a + b
+
+        //Artificio para caer en la excepcion de tipo sobrecarga de entero
+        if (result < 0) throw new ExcepcionDeEnteroSobrecargado
+        result
+      }
+    }
+
+    //Objeto con logica de negocio donde se encontraria el try/catch
+
+    import CalculadorExceptions._
+    def tryCatch(a: Int, b: Int): Int = {
+      try {
+        Calculador.suma(a, b)
+      } catch {
+        case e: ExcepcionDeEnteroSobrecargado => -1
+        case e: ExcepcionDeNumerosNegativos => -2
+      } finally {
+        //Esta parte del codigo siempre se va a ejecutar y siempre ejecutara al final del programa donde se encuentra
+        //el try/cath/finally
+        println("Calculo hecho!")
+      }
+    }
+
+    println(tryCatch(3, -4))
+
+    /**
+     * EJERCICIO:
+     * Tomar una foto al resultado y al codigo y subir en un archivo con nombre EJERCICIO_Procedimientos y
+     * subir a su carpeta de trabajo
+     *
+     * Crear dos procedimientos donde se muestre un mensaje customizado del manejo de errores y agregar esos
+     * procedimientos a la funcion creada en la parte de arriba para el manejo de errores cuando los errores sean
+     * de numeronegativos y tambien de enterores sobrecargados
+     *
+     * Ademas, agregar un case de excepcion mas a la logica del try catch en la parte superior
+     *
+     * */
   }
 
 
