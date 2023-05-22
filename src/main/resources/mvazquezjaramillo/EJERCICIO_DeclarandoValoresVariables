@@ -1,0 +1,3 @@
+val totalResultado = (variableAsignandoTipo + valorInfiriendoTipo)
+
+println(s"El total es $totalResultado")

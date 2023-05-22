@@ -214,9 +214,9 @@ object Basicos {
       var edadMoises2 = 70
 
       if ((edadMoises2 > 61 && edadMoises2 < 110 ) || (edadMoises2 ==60))
-        {
-          println("Moises es adulto mayor")
-        }
+      {
+        println("Moises es adulto mayor")
+      }
 
     }
 
@@ -347,14 +347,14 @@ object Basicos {
      * Utiliar los operadores logicos AND, OR.
      */
     //Instanciamos la clase productos
-    val futbol = new Deportes("futbol", 11, 10000)
-    val baloncesto = new Deportes("basketbol", 6, 3000)
+    //val futbold = new Deportes("futbol",11,10000)
+    //val baloncestod = new Deportes("basketbol",6,3000)
 
     //Validamos operacion sobrecargada de SUMA
-    val deporteSuma = hipotecarioVerde + hipotecarioMiVivienda
-    println(deporteSuma.nombre)
-    println(deporteSuma.participantes)
-    println(deporteSuma.seguidores)
+    //val deporteSuma = (futbold + baloncestod)
+    //println(deporteSuma.nombre)
+    //println(deporteSuma.participantes)
+    //println(deporteSuma.seguidores)
 
   }
 
