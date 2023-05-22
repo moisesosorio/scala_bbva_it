@@ -1,0 +1,8 @@
+  //ejercicio 2
+  val valorInfiriendoTipo = (20 * 10) - 10 / 2
+  var variableAsignandoTipo: Float = (20 * 13) / 3
+
+  variableAsignandoTipo = 30 * 20
+  println ("Ejercicio 2")
+  val resultado = (variableAsignandoTipo+valorInfiriendoTipo)/2
+  println("La suma es: "+resultado)
