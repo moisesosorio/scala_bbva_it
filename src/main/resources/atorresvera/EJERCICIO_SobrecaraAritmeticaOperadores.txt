@@ -1,3 +1,6 @@
+ARCHIVO DEPORTES.SCALA:
+
+
 package com.itformacion.scalacurso.data
 
 class Deportes(deporteVar: String, participantesVar: Int, seguidoresVar: Int) {
@@ -12,7 +15,6 @@ class Deportes(deporteVar: String, participantesVar: Int, seguidoresVar: Int) {
     )
   }
 
-  def ||(dep: Deportes): Unit = {
 
     if ((participantes > 1) && (seguidores >= 5000)) {
       println(s"El $deporte es un deporte de equipo conocido")
@@ -24,5 +26,17 @@ class Deportes(deporteVar: String, participantesVar: Int, seguidoresVar: Int) {
     else {
       println(s"El $deporte es un deporte individual conocido")
     }
-  }
 
+
+}
+
+
+ARCHIVO BASICOS:
+    val instancia1 = new Deportes("futbol", 11, 10000)
+    val instancia2 = new Deportes("basketbol", 6, 3000)
+    val instancia3 = new Deportes("tenis", 1, 5000)
+
+    val deportesSuma : Deportes = instancia1 + instancia2
+     println(deportesSuma.deporte)
+     println(deportesSuma.participantes)
+     println(deportesSuma.seguidores)
