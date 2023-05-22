@@ -42,6 +42,12 @@ object Basicos {
      * Base = 20
      * Altura = 30
      */
+    val base = 20
+    val altura = 30
+    val triangulo = base * altura
+
+    println("area triangulo = ")
+    println(triangulo)
   }
 
   def DeclarandoValoresVariables(): Unit = {
@@ -60,7 +66,7 @@ object Basicos {
     //Valor
     val valorInfiriendoTipo = (20 * 10) - 10 / 2
 
-    //Asignando el tipo
+    //Asignando el tipo   Double, Float, int
     val valorAsignandoTipo: Float = (20 * 13) / 3
 
     println(valorInfiriendoTipo.getClass)
@@ -89,6 +95,10 @@ object Basicos {
      *
      * Imprimir el resultado
      */
+    var suma = variableAsignandoTipo + valorInfiriendoTipo
+    println("suma ejercicio")
+    println(suma)
+
   }
 
   def TiposDeUsoComun(): Unit = {
@@ -121,6 +131,10 @@ object Basicos {
     val f: Float = 3.12213131312321111198989123.toFloat
     var a = BigInt(1_234_567_890_987_654_321L)
     var bi = BigDecimal(123_456.789)
+
+    println(f)
+    println(a)
+    println(bi)
 
     /** Tipo de datos comunes
      * Byte	  -- 8 bits con signo. [-128, 127]
@@ -197,6 +211,13 @@ object Basicos {
        * Agregar la logica: Donde se identifique que moises es adulto mayor.
        * cuando moises sea mayor de 61 y menor de 110 o cuando moises tenga 60, imprimir ("moises es adulto mayor")
        */
+      var edadMoises2 = 70
+
+      if ((edadMoises2 > 61 && edadMoises2 < 110 ) || (edadMoises2 ==60))
+        {
+          println("Moises es adulto mayor")
+        }
+
     }
 
     def OperadoresAritmeticos(): Unit = {
@@ -244,7 +265,7 @@ object Basicos {
      * Ejecucion de metodos
      */
     //Expresiones()
-    //OperadoresLogicos()
+    OperadoresLogicos()
     //OperadoresAritmeticos()
     //OperadoresRelacionales()
 
@@ -261,7 +282,8 @@ object Basicos {
       println(entero1 + entero2)
     }
     //Decomentar para validar
-    //suma(3,2)
+    suma(3,2)
+    //val df_input = df_input.select(suma(col("2"),col("3")))
 
     //Creamos una clase para simiular un objeto complejo y sumar sus datos
     //Creacion de case class
@@ -271,7 +293,7 @@ object Basicos {
 
     //Ejecutamos el metodo suma
     //Decomentar para validar
-    //suma(numeros.entero1, numeros.entero2)
+    suma(numeros.entero1, numeros.entero2)
 
     /**
      * Ahora lo que vamos a crear es una clase que se pueda sobreaargar el metodo suma y demas metodos
@@ -300,6 +322,14 @@ object Basicos {
     val hipotecariosDivision = hipotecarioVerde / hipotecarioMiVivienda
     println(hipotecariosDivision)
 
+    //val hipotecariosDivision: Double = hipotecarioVerde / hipotecarioMiVivienda
+    //println(hipotecariosDivision)
+
+    //val df_input: Producto = Producto(df1,df2,df3)
+    //df_input_salida : DataFrame = df_input / df_output
+
+    //df_input_salida
+
     /**
      * Riesgo: Que un developer cree una sobrecarga pero otro developer o alguien que vaya a mantener el software no
      * sepa sobre esta sobrecarga o no la identifique, lo cual haria perder mucho tiempo en el desarrollo o malograria
@@ -316,6 +346,16 @@ object Basicos {
      *
      * Utiliar los operadores logicos AND, OR.
      */
+    //Instanciamos la clase productos
+    val futbol = new Deportes("futbol", 11, 10000)
+    val baloncesto = new Deportes("basketbol", 6, 3000)
+
+    //Validamos operacion sobrecargada de SUMA
+    val deporteSuma = hipotecarioVerde + hipotecarioMiVivienda
+    println(deporteSuma.nombre)
+    println(deporteSuma.participantes)
+    println(deporteSuma.seguidores)
+
   }
 
   def FuncionesMetodosDeLlamadas(): Unit = {
