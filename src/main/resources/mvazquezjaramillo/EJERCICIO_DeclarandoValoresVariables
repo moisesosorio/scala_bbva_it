@@ -1,3 +1,3 @@
-val totalResultado = (variableAsignandoTipo + valorInfiriendoTipo)/3
+val totalResultado = (variableAsignandoTipo + valorInfiriendoTipo)
 
-println("total: " +totalResultado)
+println(s"El total es $totalResultado")

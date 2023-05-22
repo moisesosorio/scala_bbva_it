@@ -2,4 +2,4 @@ val base = 20
 val altura = 30
 val area = base*altura
 
-println(area)
+println(s"El area del triángulo es $area")
