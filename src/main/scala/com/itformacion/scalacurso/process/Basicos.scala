@@ -30,20 +30,25 @@ object Basicos {
     println(arrayTotal.mkString(","))
 
     //Imprimir el segundo valor dentro del array
-    println(arrayFrutas(0))
+    println(arrayFrutas(2))
+    val base = 20
+    val altura = 30
 
+    val area = (base * altura) / 2
+    println("El area del triangulo es: " + area)
     /**
      * EJERCICIO:
      * Tomar una foto al resultado y al codigo y subir en un archivo con nombre EJERCICIO_InterpreteDeScala y
      * subir a su carpeta de trabajo
      *
-     * Solicitar al interprete que identifique el area de un triangulo con los siguientes datos y luego imprimir
-     * el resultado
+     * Solicitar al interprete que identifique el area de un triangulo con los siguientes datos:
      * Area de triangulo = base por altura sobre dos
      * Base = 20
      * Altura = 30
      */
   }
+
+
 
   def DeclarandoValoresVariables(): Unit = {
     /**
@@ -60,11 +65,9 @@ object Basicos {
 
     //Valor
     val valorInfiriendoTipo = (20 * 10) - 10 / 2
-    println(valorInfiriendoTipo)
 
     //Asignando el tipo
-    val valorAsignandoTipo : Double = (20 * 13) / 3
-    println(valorAsignandoTipo)
+    val valorAsignandoTipo: Float = (20 * 13) / 3
 
     println(valorInfiriendoTipo.getClass)
     println(valorAsignandoTipo.getClass)
@@ -94,12 +97,22 @@ object Basicos {
      */
   }
 
+  //Valor
+  val valorInfiriendoTipo = (20 * 10) - 10 / 2
+  //Asignando el tipo
+  var variableAsignandoTipo: Float = (20 * 13) / 3
+  //NOTESE: Que el IDE se reaisgna el valor por ende se comprueba que la variable es valida.
+
+  variableAsignandoTipo = 30 * 20
+  println("Ejercicio 2")
+  println("\n")
+  val resultado = (variableAsignandoTipo + valorInfiriendoTipo) / 2
+  println("La suma es: " + resultado)
+
   def TiposDeUsoComun(): Unit = {
     /** *
      * Cualos son los tipos de datos de uso comun
      */
-
-    val arrayFrutas: Array[String] = Array("manzana", "peras", "uvas")
 
     val lista: List[Any] = List(
       "a string",
@@ -124,12 +137,8 @@ object Basicos {
     val s: Short = 1
     val d: Double = 2.0
     val f: Float = 3.12213131312321111198989123.toFloat
-    val a = BigInt(1_234_567_890_987_654_321L)
-    val bi = BigDecimal(123_456.789)
-
-    println(f)
-    println(a)
-    println(bi)
+    var a = BigInt(1_234_567_890_987_654_321L)
+    var bi = BigDecimal(123_456.789)
 
     /** Tipo de datos comunes
      * Byte	  -- 8 bits con signo. [-128, 127]
@@ -145,12 +154,8 @@ object Basicos {
      * Null	  -- Valor nulo.
      */
 
-      //NOTA: Peso de ejecucion de variables
-    var precio1 : Double = 120_320 //consumir mas memoria en runtime
-    val precio2 : Int = 1204 //consume menos memoria
-
     //Podemos crear nuestra clase persona y utilizarlo como tipo de dato
-    //val vPersona: Person = Person("Richard")
+    //val p: Person = Person("Richard")
   }
 
   def SobrecaraAritmeticaOperadores(): Unit = {
@@ -166,10 +171,11 @@ object Basicos {
        */
 
       val edadLimite: Int = 18
-      val edadMoises: Int = 17
+      val edadMoises: Int = 19
 
       if (edadMoises > edadLimite) {
         println(s"Moises tiene  $edadMoises anios de edad y es MAYOR de edad")
+
       } else {
         println(s"Moises tiene  $edadMoises anios de edad y es MENOR de edad")
       }
@@ -179,24 +185,18 @@ object Basicos {
       /** ** Operadores Logicos
        * ---------------------
        * && => significa "y" o "and". Si ambos operadores cumplen con la condicion, el resultado es verdadero
-       * Sinxtaxis => if ( comparacion1 && comparacion2) - Falso cuando una de las 2 condiciones no es verdadera
-       *
        * || => signica "o" o "or". Si alguno de los operadores cumple con la condicion, el resultado es verdadero
-       * Sinxtaxis => if ( comparacion1 || comparacion2) - Falso cuando ninguna de las 2 condiciones no es verdadera
-       *
        * ! => se llama operador Not Logico. Se usa para revertir el resultado de la condicion.
-       * Sintaxis => if (!(comparacion1 || comparacion2)) - Si el resultado de dentro de los parentesis es verdadero, el Not
-       * Logico lo cambiar a Falso
-       *
        *
        * Ejemplo:
        * Si moises es mayor a 18 anios y menor a 25 imprime ("Moises tiene "numero de edad", moises es joven")
        * Si moises es mayor a 25 anios y menor de 60 imprime ("moises es adulto")
        * Si moises no es mayor de 18 anio imprime ("moises es menor de edad")
-       * Si no cumple ninguna imprimir moises es un inmortal
+       * Si no cumple ninguna imprimir moises es un bebe
        */
 
-      val edadMoises: Int = 18
+
+      val edadMoises: Int = 120
 
       if (edadMoises > 18 && edadMoises < 25) {
         println(s"Moises tiene $edadMoises es joven")
@@ -216,6 +216,11 @@ object Basicos {
        * Agregar la logica: Donde se identifique que moises es adulto mayor.
        * cuando moises sea mayor de 61 y menor de 110 o cuando moises tenga 60, imprimir ("moises es adulto mayor")
        */
+    }
+
+    val edadMoises: Int = 74
+    if (edadMoises  ==60 ||(edadMoises > 61 && edadMoises<110)) {
+      println(s"Moises es $edadMoises  adulto mayor")
     }
 
     def OperadoresAritmeticos(): Unit = {
@@ -258,12 +263,11 @@ object Basicos {
         println("Moises descansa")
       }
     }
-
     /**
      * Ejecucion de metodos
      */
-    //Expresiones()
-    OperadoresLogicos()
+    Expresiones()
+    //OperadoresLogicos()
     //OperadoresAritmeticos()
     //OperadoresRelacionales()
 
@@ -309,14 +313,18 @@ object Basicos {
     val hipotecarioMiVivienda = new Productos("Mi Vivienda", 100, 10, "Diciembre")
 
     //Validamos operacion sobrecargada de SUMA
-    val hipotecariosSuma = hipotecarioVerde + hipotecarioMiVivienda
+    val hipotecariosSuma : Productos = hipotecarioVerde + hipotecarioMiVivienda
     println(hipotecariosSuma.nombre)
     println(hipotecariosSuma.precio)
     println(hipotecariosSuma.stock)
     println(hipotecariosSuma.vencimiento)
 
+    val resultadoSuma: Int = hipotecarioVerde.precio + hipotecarioMiVivienda
+    println(resultadoSuma)
+
+
     //Validamos la operacion sobrecarga de DIVISION
-    val hipotecariosDivision = hipotecarioVerde / hipotecarioMiVivienda
+    val hipotecariosDivision = hipotecarioVerde.precio / hipotecarioMiVivienda
     println(hipotecariosDivision)
 
     /**
@@ -336,6 +344,14 @@ object Basicos {
      * Utiliar los operadores logicos AND, OR.
      */
   }
+  val instancia1 = new Deportes("futbol", 11, 10000)
+  val instancia2 = new Deportes("basketbol", 6, 3000)
+
+  val ejercicioAnd = instancia1 && instancia2
+  val ejercicioOr = instancia1 || instancia2
+  println ("\n")
+  println(ejercicioAnd)
+  println(ejercicioOr)
 
   def FuncionesMetodosDeLlamadas(): Unit = {
     /** *
