@@ -1,0 +1,3 @@
+val totalResultado = (variableAsignandoTipo + valorInfiriendoTipo)/3
+
+println("total: " +totalResultado)
