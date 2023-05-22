@@ -1,0 +1,7 @@
+    //ejercicio 4
+    val edadMoises: Int = 70
+
+    if (edadMoises  ==60 ||(edadMoises > 61 && edadMoises<110)) {
+      println(s"Moises tiene $edadMoises es adulto mayor")
+    }
+

@@ -1,0 +1,6 @@
+  //ejercicio 1
+  val base = 20
+  val altura = 30
+
+  val area = (base*altura)/2
+  println("El area del triangulo es: " + area)
