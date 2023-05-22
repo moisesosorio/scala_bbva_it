@@ -30,14 +30,15 @@ object Basicos {
     println(arrayTotal.mkString(","))
 
     //Imprimir el segundo valor dentro del array
-    println(arrayFrutas(2))
+    println(arrayFrutas(0))
 
     /**
      * EJERCICIO:
      * Tomar una foto al resultado y al codigo y subir en un archivo con nombre EJERCICIO_InterpreteDeScala y
      * subir a su carpeta de trabajo
      *
-     * Solicitar al interprete que identifique el area de un triangulo con los siguientes datos:
+     * Solicitar al interprete que identifique el area de un triangulo con los siguientes datos y luego imprimir
+     * el resultado
      * Area de triangulo = base por altura sobre dos
      * Base = 20
      * Altura = 30
@@ -59,9 +60,11 @@ object Basicos {
 
     //Valor
     val valorInfiriendoTipo = (20 * 10) - 10 / 2
+    println(valorInfiriendoTipo)
 
     //Asignando el tipo
-    val valorAsignandoTipo: Float = (20 * 13) / 3
+    val valorAsignandoTipo : Double = (20 * 13) / 3
+    println(valorAsignandoTipo)
 
     println(valorInfiriendoTipo.getClass)
     println(valorAsignandoTipo.getClass)
@@ -96,6 +99,8 @@ object Basicos {
      * Cualos son los tipos de datos de uso comun
      */
 
+    val arrayFrutas: Array[String] = Array("manzana", "peras", "uvas")
+
     val lista: List[Any] = List(
       "a string",
       732, // an integer
@@ -119,8 +124,12 @@ object Basicos {
     val s: Short = 1
     val d: Double = 2.0
     val f: Float = 3.12213131312321111198989123.toFloat
-    var a = BigInt(1_234_567_890_987_654_321L)
-    var bi = BigDecimal(123_456.789)
+    val a = BigInt(1_234_567_890_987_654_321L)
+    val bi = BigDecimal(123_456.789)
+
+    println(f)
+    println(a)
+    println(bi)
 
     /** Tipo de datos comunes
      * Byte	  -- 8 bits con signo. [-128, 127]
@@ -136,8 +145,12 @@ object Basicos {
      * Null	  -- Valor nulo.
      */
 
+      //NOTA: Peso de ejecucion de variables
+    var precio1 : Double = 120_320 //consumir mas memoria en runtime
+    val precio2 : Int = 1204 //consume menos memoria
+
     //Podemos crear nuestra clase persona y utilizarlo como tipo de dato
-    //val p: Person = Person("Richard")
+    //val vPersona: Person = Person("Richard")
   }
 
   def SobrecaraAritmeticaOperadores(): Unit = {
@@ -153,11 +166,10 @@ object Basicos {
        */
 
       val edadLimite: Int = 18
-      val edadMoises: Int = 19
+      val edadMoises: Int = 17
 
       if (edadMoises > edadLimite) {
         println(s"Moises tiene  $edadMoises anios de edad y es MAYOR de edad")
-
       } else {
         println(s"Moises tiene  $edadMoises anios de edad y es MENOR de edad")
       }
@@ -167,17 +179,24 @@ object Basicos {
       /** ** Operadores Logicos
        * ---------------------
        * && => significa "y" o "and". Si ambos operadores cumplen con la condicion, el resultado es verdadero
+       * Sinxtaxis => if ( comparacion1 && comparacion2) - Falso cuando una de las 2 condiciones no es verdadera
+       *
        * || => signica "o" o "or". Si alguno de los operadores cumple con la condicion, el resultado es verdadero
+       * Sinxtaxis => if ( comparacion1 || comparacion2) - Falso cuando ninguna de las 2 condiciones no es verdadera
+       *
        * ! => se llama operador Not Logico. Se usa para revertir el resultado de la condicion.
+       * Sintaxis => if (!(comparacion1 || comparacion2)) - Si el resultado de dentro de los parentesis es verdadero, el Not
+       * Logico lo cambiar a Falso
+       *
        *
        * Ejemplo:
        * Si moises es mayor a 18 anios y menor a 25 imprime ("Moises tiene "numero de edad", moises es joven")
        * Si moises es mayor a 25 anios y menor de 60 imprime ("moises es adulto")
        * Si moises no es mayor de 18 anio imprime ("moises es menor de edad")
-       * Si no cumple ninguna imprimir moises es un bebe
+       * Si no cumple ninguna imprimir moises es un inmortal
        */
 
-      val edadMoises: Int = 120
+      val edadMoises: Int = 18
 
       if (edadMoises > 18 && edadMoises < 25) {
         println(s"Moises tiene $edadMoises es joven")
@@ -244,7 +263,7 @@ object Basicos {
      * Ejecucion de metodos
      */
     //Expresiones()
-    //OperadoresLogicos()
+    OperadoresLogicos()
     //OperadoresAritmeticos()
     //OperadoresRelacionales()
 
