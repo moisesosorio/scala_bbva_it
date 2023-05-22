@@ -1,0 +1,2 @@
+val resultado = (variableAsignandoTipo + valorInfiriendoTipo)/2
+println(resultado)
