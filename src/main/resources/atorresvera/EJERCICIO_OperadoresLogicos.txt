@@ -1,0 +1,13 @@
+      val edadMoises: Int = 60
+
+      if (edadMoises > 18 && edadMoises < 25) {
+        println(s"Moises tiene $edadMoises es joven")
+      } else if (edadMoises > 25 && edadMoises < 60) {
+        println(s"Moises tiene $edadMoises es adulto")
+      }  else if ((edadMoises > 61 && edadMoises < 110) || edadMoises == 60) {
+          println(s"Moises tiene $edadMoises es adulto mayor")
+      } else if (!(edadMoises > 18)) {
+        println(s"Moises tiene $edadMoises es menor de edad")
+      } else {
+        println("Moises es inmortal")
+      }

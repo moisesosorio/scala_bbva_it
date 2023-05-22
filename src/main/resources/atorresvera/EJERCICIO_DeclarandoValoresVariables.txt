@@ -1,0 +1,4 @@
+    val suma = variableAsignandoTipo + valorInfiriendoTipo
+    val division = suma/2
+    println("Resultado suma = " + suma)
+    println("Resultado division = " +division)
