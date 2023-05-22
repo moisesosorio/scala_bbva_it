@@ -1,0 +1,5 @@
+  variableAsignandoTipo = 30 * 20
+  println("Ejercicio 2")
+  println("\n")
+  val resultado = (variableAsignandoTipo + valorInfiriendoTipo) / 2
+  println("La suma es: " + resultado)
