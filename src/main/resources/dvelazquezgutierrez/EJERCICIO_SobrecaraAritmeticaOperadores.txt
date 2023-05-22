@@ -1,0 +1,36 @@
+package com.itformacion.scalacurso.data
+
+class Deportes(nombreVar: String, participantesVar: Int, seguidoresVar: Int) {
+
+  val nombre: String = nombreVar
+  val participantes: Int = participantesVar
+  val seguidores: Int = seguidoresVar
+
+  def &&(dep: Deportes): Deportes = {
+    new Deportes(nombre + " AND " + dep.nombre,
+      participantes + dep.participantes,
+      seguidores + dep.seguidores)
+  }
+
+  def ||(dep: Deportes): Deportes = {
+    new Deportes(nombre + " OR " + dep.nombre,
+      participantes - dep.participantes,
+      seguidores - dep.seguidores)
+  }
+
+}
+
+import com.itformacion.scalacurso.data.Deportes
+
+val instancia1 = new Deportes("futbol", 11, 10000)
+val instancia2 = new Deportes("basketbol", 6, 3000)
+
+val andDeportes = instancia1&&instancia2
+val orDeportes = instancia1||instancia2
+
+println(andDeportes.nombre)
+println(andDeportes.participantes)
+println(andDeportes.seguidores)
+println(orDeportes.nombre)
+println(orDeportes.participantes)
+println(orDeportes.seguidores)

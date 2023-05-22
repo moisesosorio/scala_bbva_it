@@ -1,0 +1,28 @@
+package com.itformacion.scalacurso.data
+
+class Deportes(deporteVar: String, participantesVar: Int, seguidoresVar: Int) {
+  val deporte: String = deporteVar
+  val participantes: Int = participantesVar
+  val seguidores: Int = seguidoresVar
+
+  def +(prod: Deportes): Deportes = {
+    new Deportes(deporte + " - " + prod.deporte,
+      participantes + prod.participantes,
+      seguidores + prod.seguidores
+    )
+  }
+
+  def ||(dep: Deportes): Unit = {
+
+    if ((participantes > 1) && (seguidores >= 5000)) {
+      println(s"El $deporte es un deporte de equipo conocido")
+    } else if ((participantes > 1) && !(seguidores > 5000)) {
+      println(s"El $deporte es un deporte de equipo poco conocido")
+    } else if (!(participantes > 1) && (seguidores < 5000)) {
+      println(s"El $deporte es un deporte individual poco conocido")
+    }
+    else {
+      println(s"El $deporte es un deporte individual conocido")
+    }
+  }
+

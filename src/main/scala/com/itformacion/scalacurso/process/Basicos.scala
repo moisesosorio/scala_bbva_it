@@ -31,7 +31,11 @@ object Basicos {
 
     //Imprimir el segundo valor dentro del array
     println(arrayFrutas(2))
+    val base = 20
+    val altura = 30
 
+    val area = (base * altura) / 2
+    println("El area del triangulo es: " + area)
     /**
      * EJERCICIO:
      * Tomar una foto al resultado y al codigo y subir en un archivo con nombre EJERCICIO_InterpreteDeScala y
@@ -43,6 +47,8 @@ object Basicos {
      * Altura = 30
      */
   }
+
+
 
   def DeclarandoValoresVariables(): Unit = {
     /**
@@ -90,6 +96,18 @@ object Basicos {
      * Imprimir el resultado
      */
   }
+
+  //Valor
+  val valorInfiriendoTipo = (20 * 10) - 10 / 2
+  //Asignando el tipo
+  var variableAsignandoTipo: Float = (20 * 13) / 3
+  //NOTESE: Que el IDE se reaisgna el valor por ende se comprueba que la variable es valida.
+
+  variableAsignandoTipo = 30 * 20
+  println("Ejercicio 2")
+  println("\n")
+  val resultado = (variableAsignandoTipo + valorInfiriendoTipo) / 2
+  println("La suma es: " + resultado)
 
   def TiposDeUsoComun(): Unit = {
     /** *
@@ -177,6 +195,7 @@ object Basicos {
        * Si no cumple ninguna imprimir moises es un bebe
        */
 
+
       val edadMoises: Int = 120
 
       if (edadMoises > 18 && edadMoises < 25) {
@@ -197,6 +216,11 @@ object Basicos {
        * Agregar la logica: Donde se identifique que moises es adulto mayor.
        * cuando moises sea mayor de 61 y menor de 110 o cuando moises tenga 60, imprimir ("moises es adulto mayor")
        */
+    }
+
+    val edadMoises: Int = 74
+    if (edadMoises  ==60 ||(edadMoises > 61 && edadMoises<110)) {
+      println(s"Moises es $edadMoises  adulto mayor")
     }
 
     def OperadoresAritmeticos(): Unit = {
@@ -239,11 +263,10 @@ object Basicos {
         println("Moises descansa")
       }
     }
-
     /**
      * Ejecucion de metodos
      */
-    //Expresiones()
+    Expresiones()
     //OperadoresLogicos()
     //OperadoresAritmeticos()
     //OperadoresRelacionales()
@@ -290,14 +313,18 @@ object Basicos {
     val hipotecarioMiVivienda = new Productos("Mi Vivienda", 100, 10, "Diciembre")
 
     //Validamos operacion sobrecargada de SUMA
-    val hipotecariosSuma = hipotecarioVerde + hipotecarioMiVivienda
+    val hipotecariosSuma : Productos = hipotecarioVerde + hipotecarioMiVivienda
     println(hipotecariosSuma.nombre)
     println(hipotecariosSuma.precio)
     println(hipotecariosSuma.stock)
     println(hipotecariosSuma.vencimiento)
 
+    val resultadoSuma: Int = hipotecarioVerde.precio + hipotecarioMiVivienda
+    println(resultadoSuma)
+
+
     //Validamos la operacion sobrecarga de DIVISION
-    val hipotecariosDivision = hipotecarioVerde / hipotecarioMiVivienda
+    val hipotecariosDivision = hipotecarioVerde.precio / hipotecarioMiVivienda
     println(hipotecariosDivision)
 
     /**
@@ -317,6 +344,14 @@ object Basicos {
      * Utiliar los operadores logicos AND, OR.
      */
   }
+  val instancia1 = new Deportes("futbol", 11, 10000)
+  val instancia2 = new Deportes("basketbol", 6, 3000)
+
+  val ejercicioAnd = instancia1 && instancia2
+  val ejercicioOr = instancia1 || instancia2
+  println ("\n")
+  println(ejercicioAnd)
+  println(ejercicioOr)
 
   def FuncionesMetodosDeLlamadas(): Unit = {
     /** *
