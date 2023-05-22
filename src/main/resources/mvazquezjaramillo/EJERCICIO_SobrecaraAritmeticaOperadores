@@ -1,8 +1,13 @@
- val instancia1: Deportes = new Deportes(nombreVar = "futbol", participantesVar = 11, seguidoresVar = 10000)
- val instancia2: Deportes = new Deportes(nombreVar = "basketball", participantesVar = 6, seguidoresVar = 300
+val instancia1: Deportes = new Deportes(nombreVar = "futbol", participantesVar = 11, seguidoresVar = 10000)
+val instancia2: Deportes = new Deportes(nombreVar = "basketball", participantesVar = 6, seguidoresVar = 300
 
- val instanciasSuma = instancia1 + instancia2
- println(instanciasSuma.nombre)
- println(instanciasSuma.participantes)
- println(instanciasSuma.seguidores)
+val deportesAND = instancia1 && instancia2
+val deportesOR = instancia1 || instancia2
 
+println(deportesAND.nombre)
+println(deportesAND.participantes)
+println(deportesAND.seguidores)
+
+println(deportesOR.nombre)
+println(deportesOR.participantes)
+println(deportesOR.seguidores)
