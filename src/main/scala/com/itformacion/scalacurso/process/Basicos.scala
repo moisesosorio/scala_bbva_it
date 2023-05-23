@@ -341,6 +341,17 @@ object Basicos {
 
     funcion_sin_parametros()
 
+    /**
+     * EJERCICIO:
+     * Tomar una foto al resultado y al codigo y subir en un archivo con nombre EJERCICIO_funcion_sin_parametros y
+     * subir a su carpeta de trabajo
+     *
+     * Crear una clase sin parametros que ejecute un metodos que sobre cargue el operador de resto(%) y
+     * utilice operadores relaciones y logicos  dentro de la funcion. Recordar que debe retornar una valor Unit
+     *
+     * Imprimir resultado
+     */
+
     /** *
      * Funcion: Con parametros
      * Aqui vemos una funcion comun donde enviamos parametros y retornamos un tipo de dato Int con el valor resultante
@@ -350,6 +361,18 @@ object Basicos {
 
     val resultado = suma(2, 3)
     println(resultado)
+
+    /**
+     * EJERCICIO:
+     * Tomar una foto al resultado y al codigo y subir en un archivo con nombre EJERCICIO_funcion_con_parametros y
+     * subir a su carpeta de trabajo
+     *
+     * Crear una funcion que reciba un parametro de tipo Array[int] y que esos paremtros sean enviados a al operador sobrecargado anteriormente
+     * (operador de resto), ejecute la operacion matematica y como resultado que devuelva un tipo Array[int],
+     * donde se guarden los datos de la operacion realizada
+     *
+     * Imprimir resultado
+     */
 
     /**
      * Funcion: con numero de parametros variable
@@ -375,6 +398,18 @@ object Basicos {
     }
 
     println(funcion_recursiva(10))
+
+    /**
+     * EJERCICIO:
+     * Tomar una foto al resultado y al codigo y subir en un archivo con nombre EJERCICIO_funcion_recursiva y
+     * subir a su carpeta de trabajo
+     *
+     * Crear una funcion recursiva que cree de manera autimatica la cantidad de objetos de acuerdo al parametro enviado.
+     * Los objetos deben ser de un tipo personalisado, pueden utilizar la clase productos como ejemplo, sin embargo deben
+     * crear sus propios objetos.
+     *
+     * Imprimir resultado
+     */
 
     /**
      * Funcion: Anonima
