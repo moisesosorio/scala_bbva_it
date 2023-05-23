@@ -48,8 +48,6 @@ object Basicos {
      */
   }
 
-
-
   def DeclarandoValoresVariables(): Unit = {
     /**
      * Que es una variable?
@@ -96,18 +94,6 @@ object Basicos {
      * Imprimir el resultado
      */
   }
-
-  //Valor
-  val valorInfiriendoTipo = (20 * 10) - 10 / 2
-  //Asignando el tipo
-  var variableAsignandoTipo: Float = (20 * 13) / 3
-  //NOTESE: Que el IDE se reaisgna el valor por ende se comprueba que la variable es valida.
-
-  variableAsignandoTipo = 30 * 20
-  println("Ejercicio 2")
-  println("\n")
-  val resultado = (variableAsignandoTipo + valorInfiriendoTipo) / 2
-  println("La suma es: " + resultado)
 
   def TiposDeUsoComun(): Unit = {
     /** *
@@ -344,14 +330,6 @@ object Basicos {
      * Utiliar los operadores logicos AND, OR.
      */
   }
-  val instancia1 = new Deportes("futbol", 11, 10000)
-  val instancia2 = new Deportes("basketbol", 6, 3000)
-
-  val ejercicioAnd = instancia1 && instancia2
-  val ejercicioOr = instancia1 || instancia2
-  println ("\n")
-  println(ejercicioAnd)
-  println(ejercicioOr)
 
   def FuncionesMetodosDeLlamadas(): Unit = {
     /** *
