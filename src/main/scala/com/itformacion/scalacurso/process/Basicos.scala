@@ -305,12 +305,12 @@ object Basicos {
     println(hipotecariosSuma.stock)
     println(hipotecariosSuma.vencimiento)
 
-    val resultadoSuma: Int = hipotecarioVerde.precio + hipotecarioMiVivienda
+    val resultadoSuma: Int = hipotecarioVerde.precio + hipotecarioMiVivienda.precio
     println(resultadoSuma)
 
 
     //Validamos la operacion sobrecarga de DIVISION
-    val hipotecariosDivision = hipotecarioVerde.precio / hipotecarioMiVivienda
+    val hipotecariosDivision = hipotecarioVerde.precio / hipotecarioMiVivienda.precio
     println(hipotecariosDivision)
 
     /**

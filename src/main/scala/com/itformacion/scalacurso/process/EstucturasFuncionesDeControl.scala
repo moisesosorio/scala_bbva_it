@@ -271,7 +271,12 @@ object EstucturasFuncionesDeControl {
      * Tomar una foto al resultado y al codigo y subir en un archivo con nombre EJERCICIO_Procedimientos y
      * subir a su carpeta de trabajo
      *
-     * Crear un procedimiento que evalue cambie minusculas por mayusculas dentro de un arregle de Strings
+     * Crear un procedimiento que utilice un for-comprehension para cambiar de mayusculas as minusculas la primera y ultima
+     * letra de cada palabra en un arreglo que llegue como parametro.
+     * Cuando es mayuscula poner minuscula y cuando es minuscula poner mayuscula. utilizar las funciones toLowerCase y toUpperCase
+     *
+     * procedimiento(Array["Moises", "osorio", "bernaL"]
+     * resultado: moiseS, OsoriO, Bernal
      *
      */
   }
